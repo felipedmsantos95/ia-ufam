@@ -1,0 +1,33 @@
+1. a) 
+
+ Call: (7) podePegar(state(naPorta, noChao, naJanela, semBanana)) -> O macaco e a caixa necessaria para pegar a banana estão em posições diferentes.
+   Call: (8) move(state(naPorta, noChao, naJanela, semBanana), _G2416, _G2417) -> é chamada a clausula para esta situação
+   Exit: (8) move(state(naPorta, noChao, naJanela, semBanana), anda(naPorta, _G2409), state(_G2409, noChao, naJanela, semBanana)) -> A cláusula é para que o macaco ande.
+   Call: (8) podePegar(state(_G2409, noChao, naJanela, semBanana))-> Mas para qual posição?
+   Call: (9) move(state(_G2409, noChao, naJanela, semBanana), _G2424, _G2425)
+   Exit: (9) move(state(naJanela, noChao, naJanela, semBanana), sobe, state(naJanela, sobreCaixa, naJanela, semBanana)) -> A mesma onde se encontra a caixa, ou seja, naJanela. Aqui também foi executado a clausula sobe, pois o macaco chegou na mesma posição da caixa.
+   Call: (9) podePegar(state(naJanela, sobreCaixa, naJanela, semBanana)) -> Porém na janela ainda não é possivel pegar a banana
+   Call: (10) move(state(naJanela, sobreCaixa, naJanela, semBanana), _G2429, _G2430) ? creep
+   Fail: (10) move(state(naJanela, sobreCaixa, naJanela, semBanana), _G2429, _G2430) -> Então há uma falha, o macaco ainda está sem banana,mas logo em seguida será executada a ação de arrastar.
+   Fail: (9) podePegar(state(naJanela, sobreCaixa, naJanela, semBanana)) ? creep
+   Redo: (9) move(state(_G2409, noChao, naJanela, semBanana), _G2424, _G2425) ? creep
+   Exit: (9) move(state(naJanela, noChao, naJanela, semBanana), arrasta(naJanela, _G2417), state(_G2417, noChao, _G2417, semBanana)) ->O macaco e a caixa irão para a posição da banana.
+   Call: (9) podePegar(state(_G2417, noChao, _G2417, semBanana)) ? creep
+   Call: (10) move(state(_G2417, noChao, _G2417, semBanana), _G2432, _G2433) ? creep
+   Exit: (10) move(state(_G2417, noChao, _G2417, semBanana), sobe, state(_G2417, sobreCaixa, _G2417, semBanana)) -> Aqui o macaco e a caixa estão na posicao da banana e é executada a clausula sobe, mais uma vez.
+   Call: (10) podePegar(state(_G2417, sobreCaixa, _G2417, semBanana)) ? creep
+   Call: (11) move(state(_G2417, sobreCaixa, _G2417, semBanana), _G2437, _G2438) -> Macaco está sobre a caixa.
+   Exit: (11) move(state(meio, sobreCaixa, meio, semBanana), pega, state(meio, sobreCaixa, meio, comBanana)) -> Como agora a posição é o meio, é possível pegar a banana.
+   Call: (11) podePegar(state(meio, sobreCaixa, meio, comBanana)) ? creep
+   Exit: (11) podePegar(state(meio, sobreCaixa, meio, comBanana)) ? creep
+   Exit: (10) podePegar(state(meio, sobreCaixa, meio, semBanana)) ? creep
+   Exit: (9) podePegar(state(meio, noChao, meio, semBanana)) ? creep
+   Exit: (8) podePegar(state(naJanela, noChao, naJanela, semBanana)) ? creep
+   Exit: (7) podePegar(state(naPorta, noChao, naJanela, semBanana)) ? creep
+-> Ao final o resultado é true.
+
+b) A prioridade de execução da clausula anda foi alterada para a primeira, deste modo, como a posição da caixa não é relevante na definição desta clausula, o macaco continuará sempre andando, fazendo o programa entrar em loop inifinito. A cláusula "arrasta" sendo posta antes de "anda", garantia que era checado se a posição do macaco era a mesma da caixa.
+
+2.
+
+
