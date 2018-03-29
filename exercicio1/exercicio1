@@ -28,6 +28,4 @@
 
 b) A prioridade de execução da clausula anda foi alterada para a primeira, deste modo, como a posição da caixa não é relevante na definição desta clausula, o macaco continuará sempre andando, fazendo o programa entrar em loop inifinito. A cláusula "arrasta" sendo posta antes de "anda", garantia que era checado se a posição do macaco era a mesma da caixa.
 
-2.
-
 
