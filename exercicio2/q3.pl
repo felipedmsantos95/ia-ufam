@@ -1,12 +1,3 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                                  
-% Jogo do domino bastante simplificado e incompleto
-%
-% Autor: Edjard Mota       
-% Data : 13/04/2018              
-%                                  
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 :-
     use_module(library(lists)).
 
@@ -15,7 +6,8 @@ remove(X,[X|L],L):- !.
 remove(X,[Y|L],[Y|L1]):-
     remove(X,L,L1).
 
-distribuiPedras(equipes(J1, J2, J3, J4)):-
+distribuiPedras(E):-
+    E = equipes(J1, J2, J3, J4),
     B =
 [(0,0),(0,1),(0,2),(0,3),(0,4),(0,5),(0,6),(1,1),(1,2),(1,3),(1,4),(1,5),(1,6),(2,2),(2,3),(2,4),(2,5),(2,6),(3,3),(3,4),(3,5),(3,6),(4,4),(4,5),(4,6),(5,5),(5,6),(6,6)],
     distribui(B,J1, J2, J3, J4).
@@ -36,6 +28,7 @@ seleciona(N,B,B1):-
     remove(N,B,B1).
 seleciona(N,Dist,Dist1):-
     seleciona(N,Dist,Dist1).
+
 
 state(0,mesa([],[],[],[])).
 
@@ -62,3 +55,7 @@ joguePonta(p(Y,X),p(X,_),p(Y,X)).
 
 inicia(P,_,mesa([P],[P],[P],[P])).
 
+
+jogaveis(mao([]), estado(_,_,_,_), []):- !.
+jogaveis(mao([H|T]), estado(C1, C2, C3, C4), Jogaveis):-
+    
