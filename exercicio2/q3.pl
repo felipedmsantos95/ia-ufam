@@ -56,6 +56,16 @@ joguePonta(p(Y,X),p(X,_),p(Y,X)).
 inicia(P,_,mesa([P],[P],[P],[P])).
 
 
-jogaveis(mao([]), estado(_,_,_,_), []):- !.
-jogaveis(mao([H|T]), estado(C1, C2, C3, C4), Jogaveis):-
-    
+jogaveis(mao([]), estado(_,_,_,_), [Y]):- !.
+jogaveis(mao([(C1,X)|T]), estado(C1, C2, C3, C4), Jogaveis):-
+    N  = (C1, X),
+    jogaveis(mao(T), estado(C1, C2, C3, C4),[N|_]).
+jogaveis(mao([(C2,X)|T]), estado(C1, C2, C3, C4), Jogaveis):-
+    N  = (C2, X),
+    jogaveis(mao(T), estado(C1, C2, C3, C4),[N|_]).
+jogaveis(mao([(C3,X)|T]), estado(C1, C2, C3, C4), Jogaveis):-
+    N  = (C3, X),
+    jogaveis(mao(T), estado(C1, C2, C3, C4),[N|_]).
+jogaveis(mao([(C4,X)|T]), estado(C1, C2, C3, C4), Jogaveis):-
+    N  = (C4, X),
+    jogaveis(mao(T), estado(C1, C2, C3, C4),[N|_]).
