@@ -19,12 +19,11 @@ memberP((_,X2), estado(_,(X2,X2),_,_)).
 memberP((_,X2), estado(_,_,(X2,X2),_)).
 memberP((_,X2), estado(_,_,_,(X2,X2))).
 
-jogaveis([],_,[]).
-jogaveis([X|T1], B, [X|T3]):-
+jogaveis(mao([]),_,[]).
+jogaveis(mao([X|T1]), B, [X|T3]):-
     memberP(X,B),
-    jogaveis(T1, B, T3).
-jogaveis([_|T1], B, T2):-
-    jogaveis(T1,B,T2).
-
+    jogaveis(mao(T1), B, T3).
+jogaveis(mao([_|T1]), B, T2):-
+    jogaveis(mao(T1),B,T2).
 
 
