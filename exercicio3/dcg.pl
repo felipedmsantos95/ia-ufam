@@ -29,7 +29,7 @@ determiner --> [a].
 adjective --> [decorated].
 
 noun --> [pieplate].
-noun --> [surprise].
+noun --> [surpresa].
 
 verb --> [contains].
 
