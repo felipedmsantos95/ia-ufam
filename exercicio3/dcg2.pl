@@ -49,10 +49,6 @@ regra([sena|B],Y,Z):-
 	append(Y,[6],W),
 	regra(B,W,Z).
 
-%leituraDupla(Sentenca):-
- %   nl,
-  %  read_sentence(X),
-   % phrase(,X).
     
 
 % O que eu preciso é que a leitura retorne no Out uma lista [,,1,2]
