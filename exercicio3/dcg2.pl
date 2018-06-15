@@ -49,6 +49,12 @@ regra([sena|B],Y,Z):-
 	append(Y,[6],W),
 	regra(B,W,Z).
 
+%leituraDupla(Sentenca):-
+ %   nl,
+  %  read_sentence(X),
+   % phrase(,X).
+    
+
 % O que eu preciso é que a leitura retorne no Out uma lista [,,1,2]
 % caso a pesso escreva "...jogo.. branco e duque ...." usando a
 % regra().
@@ -57,3 +63,6 @@ leitura(In):-
 	nl,
 	read_sentence(X),
 	regra(X,_,In).
+
+
+

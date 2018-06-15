@@ -62,7 +62,8 @@
 
 :-
     use_module(library(lists)),
-    [banco_pedras].
+    [banco_pedras],
+    [dcg2].
 
 remove(_,[],[]).
 remove(X,[X|L],L):- !.
@@ -324,7 +325,9 @@ efetua_jogada(sapiens,jogador(preso,mao(M)),NJogador, Mesa, Mesa1,lock(TK,Lock),
      write(' Passou!!!'), nl),!.
      
 pegue_pedra(M,Pedras,Pedra):-
-    read(P),
+    
+    %read(P),
+    leitura(P),
     (P \= passo,
      member(P,Pedras),
      Pedra = P

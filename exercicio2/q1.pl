@@ -28,4 +28,3 @@ seleciona(N,B,B1):-
     remove(N,B,B1).
 seleciona(N,Dist,Dist1):-
     seleciona(N,Dist,Dist1).
-
