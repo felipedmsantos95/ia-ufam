@@ -325,8 +325,7 @@ efetua_jogada(sapiens,jogador(preso,mao(M)),NJogador, Mesa, Mesa1,lock(TK,Lock),
      
 pegue_pedra(M,Pedras,Pedra):-
     
-    %read(P),
-    leitura(P),
+    read(P),    
     (P \= passo,
      member(P,Pedras),
      Pedra = P
