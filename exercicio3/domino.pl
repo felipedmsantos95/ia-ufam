@@ -62,8 +62,7 @@
 
 :-
     use_module(library(lists)),
-    [banco_pedras],
-    [dcg2].
+    [banco_pedras].
 
 remove(_,[],[]).
 remove(X,[X|L],L):- !.
