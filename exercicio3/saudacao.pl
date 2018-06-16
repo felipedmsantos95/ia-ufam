@@ -8,7 +8,8 @@ oracao(J1,J2) --> frase(J1),conjuncao,frase(J2).
 frase(J1) --> sujeito, predicado(J1).
 
 sujeito --> pronomePessoal(_).
-sujeito --> pronomePossessivo(G), substComum(G).%para o caso da frase que se refere ao segundo parceiro
+sujeito --> artigo(G), pronomePossessivo(G), substComum(G).%para o caso da frase que se refere ao segundo parceiro
+sujeito --> pronomePossessivo(G), substComum(G).
 
 predicado(J1) --> verbo, artigo(G),substProprio(G, J1).
 predicado(J1) --> verbo, substProprio(_, J1).
