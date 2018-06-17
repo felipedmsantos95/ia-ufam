@@ -112,6 +112,8 @@ regra([equipe|B],Y,Z):-
 
 regra(['1'|_],_,1):-!.
 
+regra([passo|_],_,passo):-!.
+
 regra([jogo|B],Y,Z):-
 	append([,],[],Y),
 	regra(B,Y,Z).

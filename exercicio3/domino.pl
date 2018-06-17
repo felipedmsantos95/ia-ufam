@@ -383,6 +383,7 @@ playDomino:-
     write('***************************'), nl,
     write('     Domino em Prolog    '), nl,
     write('***************************'), nl,
+    leituraDupla,
     escolhaEquipe(Dupla),
     escolha_dupla(Dupla,Equipes),
     distribuiPedras(PedrasJogadores),
