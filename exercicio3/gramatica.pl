@@ -64,17 +64,18 @@ leituraDupla:-
 % Regras para a escolha da equipe:
 % exemplo de entrada: "nos escolhemos a 2", "escolhemos a primeira" 
 %================================================================================
+fraseEscolhaEquipe(Ordem) --> numeral(Ordem).
 fraseEscolhaEquipe(Ordem) --> pronomePessoal(p), verbo(p), artigo(f), numeral(Ordem).
 fraseEscolhaEquipe(Ordem) --> pronomePessoal(p), verbo(p), artigo(f), numeral(Ordem), [equipe].
 fraseEscolhaEquipe(Ordem) --> verbo(p), artigo(f), numeral(Ordem).
 fraseEscolhaEquipe(Ordem) --> verbo(p), artigo(f), numeral(Ordem), [equipe].
 
-ordem([primeira], 1).
-ordem(['1'], 1).
-ordem([segunda], 2).
-ordem(['2'], 2).
+ordem(primeira, 1).
+ordem('1', 1).
+ordem(segunda, 2).
+ordem('2', 2).
 
-escolhaEquipe:-
+escolhaEquipe(X):-
     write('Possiveis equipes: '), nl,
     write('----------------------'), nl,
     write('[1] - Jogadores 1 e 3'), nl,

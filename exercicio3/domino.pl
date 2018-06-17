@@ -324,7 +324,6 @@ efetua_jogada(sapiens,jogador(preso,mao(M)),NJogador, Mesa, Mesa1,lock(TK,Lock),
      write(' Passou!!!'), nl),!.
      
 pegue_pedra(M,Pedras,Pedra):-
-    
     read(P),    
     (P \= passo,
      member(P,Pedras),
@@ -381,7 +380,8 @@ playDomino:-
     write('***************************'), nl,
     write('     Domino em Prolog    '), nl,
     write('***************************'), nl,
-    escolha_dupla(Equipes),
+    escolhaEquipe(Dupla),
+    escolha_dupla(Dupla,Equipes),
     distribuiPedras(PedrasJogadores),
     mostra_pedras(Equipes, PedrasJogadores),
     inicia_jogo(0,PedrasJogadores, NovasPedrasJogadores, Mesa, Vez),
@@ -420,13 +420,12 @@ verifica_estado(Lock,jogo(Mesa, Pedras, Equipes,Vez)):-
     jogue_domino(Lock,jogo(Mesa, Pedras, Equipes,Proximo)),!.
 
 % -------------------------------------------------------------------
-escolha_dupla(equipes(Domino,Sapiens)):-
-    write('Possiveis equipes: '), nl,
-    write('----------------------'), nl,
-    write('[1] - Jogadores 1 e 3'), nl,
-    write('[2] - Jogadores 2 e 4'), nl, 
-    write('Escolha sua equipe: '), nl,
-    read(Dupla), nl,
+escolha_dupla(Dupla,equipes(Domino,Sapiens)):-
+    %write('Possiveis equipes: '), nl,
+    %write('----------------------'), nl,
+    %write('[1] - Jogadores 1 e 3'), nl,
+    %write('[2] - Jogadores 2 e 4'), nl, 
+    %write('Escolha sua equipe: '), nl,
     (
      Dupla \= 1, Dupla \= 2, !,   % Escolha invalida se nao for 1 ou 1
      write('Error : não é uma escolha válida !'), nl,
