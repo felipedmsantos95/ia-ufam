@@ -291,7 +291,8 @@ efetua_jogada(sapiens,jogador(livre,mao(M)),NJogador, Mesa, Mesa1,lock(TK,Lock),
     estadoValido(Mesa,E),
     jogaveis(mao(M), E, Pedras),
     write('Escolha uma pedra de: '), write(M), nl,
-    pegue_pedra(M,Pedras,Pedra),
+    leitura(P),
+    pegue_pedra(P,M,Pedras,Pedra),
     jogue(Pedra,Mesa,Mesa1),
     (\+ Pedra = passo,
      %mostre_mesa(Mesa1),
@@ -309,7 +310,8 @@ efetua_jogada(sapiens,jogador(preso,mao(M)),NJogador, Mesa, Mesa1,lock(TK,Lock),
     estadoValido(Mesa,E),
     jogaveis(mao(M), E, Pedras),
     write('Escolha uma pedra de: '), write(M), write('  '), nl,
-    pegue_pedra(M,Pedras,Pedra),
+    leitura(P),
+    pegue_pedra(P,M,Pedras,Pedra),
     jogue(Pedra,Mesa,Mesa1),
     (\+ Pedra = passo,
      %mostre_mesa(Mesa1),
@@ -323,8 +325,8 @@ efetua_jogada(sapiens,jogador(preso,mao(M)),NJogador, Mesa, Mesa1,lock(TK,Lock),
      NJogador = jogador(preso, mao(M)),
      write(' Passou!!!'), nl),!.
      
-pegue_pedra(M,Pedras,Pedra):-
-    read(P),    
+pegue_pedra(P,M,Pedras,Pedra):-
+    %read(P),    
     (P \= passo,
      member(P,Pedras),
      Pedra = P
@@ -333,7 +335,8 @@ pegue_pedra(M,Pedras,Pedra):-
      \+ member(P,Pedras),
      write('Esta pedra '), write(P), write(' naum eh valida!'), nl,
      write('Escolha uma pedra de: '), write(M),
-     pegue_pedra(M,Pedras,Pedra)
+     leitura(P),
+     pegue_pedra(P,M,Pedras,Pedra)
      ;
      Pedra = P,
      write('Jogador Passou!')), !.
