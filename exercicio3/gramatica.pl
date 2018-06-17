@@ -50,7 +50,7 @@ verbo(p) --> [escolhemos] | [selecionamos].
 
 numeral(X) --> [X] , {member(X,['1',primeira, '2', segunda])}.
 
-leituraDupla:-
+leituraDupla(J1,J2):-
     write('Baré: Bem vindo ao mundo Baré!'),nl,
     write('Baré: Por favor entre com o nome da sua dupla, na ordem de jogada.'), nl,
     write('>> '),

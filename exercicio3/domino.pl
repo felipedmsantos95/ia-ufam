@@ -383,11 +383,11 @@ playDomino:-
     write('***************************'), nl,
     write('     Domino em Prolog    '), nl,
     write('***************************'), nl,
-    leituraDupla,
+    leituraDupla(X,Y),
     escolhaEquipe(Dupla),
     escolha_dupla(Dupla,Equipes),
     distribuiPedras(PedrasJogadores),
-    mostra_pedras(Equipes, PedrasJogadores),
+    mostra_pedras(Equipes, PedrasJogadores,X,Y),
     inicia_jogo(0,PedrasJogadores, NovasPedrasJogadores, Mesa, Vez),
     write('Iniciou com jogador: '), write(Vez), nl,
     proximoJogar(Vez,Proximo),
@@ -445,12 +445,12 @@ escolha_dupla(Dupla,equipes(Domino,Sapiens)):-
     ).
 
 % -------------------------------------------------------------------
-mostra_pedras(equipes(_,sapiens(S1,S2)), PedrasJogadores):-
+mostra_pedras(equipes(_,sapiens(S1,S2)), PedrasJogadores,X,Y):-
     arg(S1, PedrasJogadores ,P1),
     arg(S2, PedrasJogadores ,P2),
     write(' *Jogador*      *Pedras* '), nl,
-    write('      '),  write(S1), write(' :       '),  write(P1), nl,
-    write('      '),  write(S2), write(' :       '),  write(P2), nl.
+    write('      '),  write(S1),write(':'), write(X), write(' :       '),  write(P1), nl,
+    write('      '),  write(S2),write(':'), write(Y), write(' :       '),  write(P2), nl.
 % -------------------------------------------------------------------
 mostre_mesa(mesa(P1,P2,P3,P4)):-
     qualEstado(mesa(P1,P2,P3,P4),E),
