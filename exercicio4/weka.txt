@@ -1,0 +1,79 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.functions.MultilayerPerceptron -L 0.3 -M 0.2 -N 1500 -V 0 -S 0 -E 20 -H 2 -G -R
+Relation:     base_positivos
+Instances:    48
+Attributes:   13
+              male(x)
+              parent(y_x)
+              female(x)
+              parent(x_y)
+              female(y)
+              male(y)
+              parent(Y_Z)
+              male(Z)
+              parent(Z_Y)
+              female(Z)
+              parent(Z_W)
+              male(W)
+              h(x)
+Test mode:    evaluate on training data
+
+=== Classifier model (full training set) ===
+
+Linear Node 0
+    Inputs    Weights
+    Threshold    0.3602247659098091
+    Node 1    -1.3266315865048082
+    Node 2    0.6626092777235404
+Sigmoid Node 1
+    Inputs    Weights
+    Threshold    10.016200383932441
+    Attrib male(x)    -1.2617221814440762
+    Attrib parent(y_x)    5.107243027306561
+    Attrib female(x)    1.2649867838991133
+    Attrib parent(x_y)    -5.14620292502395
+    Attrib female(y)    -5.755665012369417
+    Attrib male(y)    5.752040117680253
+    Attrib parent(Y_Z)    -0.06229793117178759
+    Attrib male(Z)    -2.2156006641192576
+    Attrib parent(Z_Y)    -1.9779963424839644
+    Attrib female(Z)    1.746858152632223
+    Attrib parent(Z_W)    -0.7093547248041261
+    Attrib male(W)    3.5988772614616384
+Sigmoid Node 2
+    Inputs    Weights
+    Threshold    -15.694107731156496
+    Attrib male(x)    2.702047825488227
+    Attrib parent(y_x)    -2.6818923924795675
+    Attrib female(x)    -2.636472786326522
+    Attrib parent(x_y)    2.6364078935042077
+    Attrib female(y)    5.763950916273223
+    Attrib male(y)    -5.715672224787304
+    Attrib parent(Y_Z)    9.549124502836895
+    Attrib male(Z)    -11.99980655105633
+    Attrib parent(Z_Y)    5.678757934295583
+    Attrib female(Z)    -6.408859603288809
+    Attrib parent(Z_W)    -0.10313264500855604
+    Attrib male(W)    -2.943844605909176
+Class 
+    Input
+    Node 0
+
+
+Time taken to build model: 9.76 seconds
+
+=== Evaluation on training set ===
+
+Time taken to test model on training data: 0 seconds
+
+=== Summary ===
+
+Correlation coefficient                  0.907 
+Mean absolute error                      0.2212
+Root mean squared error                  0.4236
+Relative absolute error                 22.1225 %
+Root relative squared error             42.3585 %
+Total Number of Instances               48     
+
+
